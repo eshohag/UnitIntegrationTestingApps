@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.Web.Mvc;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using UnitIntegrationTestingApps.BLL;
 using UnitIntegrationTestingApps.Controllers;
 using UnitIntegrationTestingApps.Models;
@@ -47,6 +48,20 @@ namespace ProjectName.IntegrationTesting.Controllers
             var result = Repository.Create(null);
             //Assert
             Assert.AreEqual(result, 0);
+        }
+
+        [TestMethod]
+        public void IndexTest()
+        {
+            // Arrange
+            var controller = new StudentController();
+
+            // Act
+            var result = controller.Index() as ViewResult;
+
+            //Assert.IsNotNull(result);
+            // Assert.AreNotEqual(result.ViewName, "Index");
+            Assert.AreEqual(result.ViewEngineCollection.Count, 2);
         }
     }
 }
