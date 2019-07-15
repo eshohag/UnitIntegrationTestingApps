@@ -16,7 +16,7 @@ namespace UnitIntegrationTestingApps.Controllers
             var aStudent = new Student() { FirstName = "Abu", LastName = "Sayed", Department = "CSE,JU" };
 
             var students = Repository.GetStudentList();
-            //var create = Repository.Create(aStudent);
+            var create = Repository.Create(aStudent);
             var student = Repository.GetStudent();
             var studentById = Repository.GetStudentById(1);
             return View(students);

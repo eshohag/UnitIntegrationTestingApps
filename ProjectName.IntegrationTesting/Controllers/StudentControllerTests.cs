@@ -34,7 +34,7 @@ namespace ProjectName.IntegrationTesting.Controllers
             var result = Repository.GetStudentList();
 
             //Assert
-            Assert.AreNotSame(result.Count, 2);
+            Assert.AreEqual(result.Count, 2);
         }
 
         [TestMethod]
@@ -45,9 +45,9 @@ namespace ProjectName.IntegrationTesting.Controllers
             //var controller = new StudentController();
 
             // Act
-            var result = Repository.Create(null);
+            var result = Repository.Create(aStudent);
             //Assert
-            Assert.AreEqual(result, 0);
+            Assert.AreEqual(result, 1);
         }
 
         [TestMethod]
