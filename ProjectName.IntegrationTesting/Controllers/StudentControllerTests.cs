@@ -34,7 +34,8 @@ namespace ProjectName.IntegrationTesting.Controllers
             var result = Repository.GetStudentList();
 
             //Assert
-            Assert.AreEqual(result.Count, 2);
+            //Assert.AreEqual(result.Count, 2);
+            Assert.IsTrue(result.Count > 2);
         }
 
         [TestMethod]
